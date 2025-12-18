@@ -1,11 +1,40 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <a href ="Script.js"> </a>
+    <a href ="Style.css"> </a>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width", initial-scale="1.0">
-<link rel="stylesheet" href="Style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Verification</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <div class="liquid-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="glass-panel">
+        <div id="game-ui">
+            <h1>Human Verification</h1>
+            <p>Score 5 points in Snake to unlock access.</p>
+            
+            <div class="score-container">Score: <span id="score">0</span></div>
+            
+            <canvas id="gameCanvas" width="300" height="300"></canvas>
+            
+            <div class="controls-hint">Use Arrow Keys to Move</div>
+        </div>
+
+        <div id="success-msg" class="hidden">
+            <div class="check-icon">✓</div>
+            <h1>Verification Complete</h1>
+            <p>Congratulations! You have proven your humanity. Redirecting to the dashboard...</p>
+            <button class="btn" onclick="location.reload()">Enter System</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

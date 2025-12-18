@@ -1,3 +1,2 @@
 # Web-Tech-Project
-Creating a Human verification page using Html, Css and Js.
-
+Creating a Human verification page using HTML/CSS/JS
