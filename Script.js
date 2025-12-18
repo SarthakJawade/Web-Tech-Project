@@ -4,16 +4,14 @@ const scoreDisplay = document.getElementById('score');
 const gameUI = document.getElementById('game-ui');
 const successUI = document.getElementById('success-msg');
 
-let box = 15; // Adjusted size for smaller canvas
+let box = 15; 
 let score = 0;
 let direction;
 let gameActive = true;
 
-// Snake setup
 let snake = [];
 snake[0] = { x: 10 * box, y: 10 * box };
 
-// Food setup
 let food = {
     x: Math.floor(Math.random() * 19 + 1) * box,
     y: Math.floor(Math.random() * 19 + 1) * box
@@ -40,7 +38,7 @@ function draw() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw snake
+    
     for (let i = 0; i < snake.length; i++) {
         ctx.fillStyle = (i === 0) ? "#22d3ee" : "rgba(34, 211, 238, 0.4)";
         ctx.strokeStyle = "#0a0f1e";
@@ -48,12 +46,12 @@ function draw() {
         ctx.strokeRect(snake[i].x, snake[i].y, box, box);
     }
 
-    // Draw food (Glowing Red)
+    
     ctx.fillStyle = "#ff4d4d";
     ctx.shadowBlur = 10;
     ctx.shadowColor = "#ff4d4d";
     ctx.fillRect(food.x, food.y, box, box);
-    ctx.shadowBlur = 0; // Reset shadow for other elements
+    ctx.shadowBlur = 0; 
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
@@ -63,12 +61,12 @@ function draw() {
     if (direction === "RIGHT") snakeX += box;
     if (direction === "DOWN") snakeY += box;
 
-    // Eat food logic
+   
     if (snakeX === food.x && snakeY === food.y) {
         score++;
         scoreDisplay.textContent = score;
         
-        // VERIFICATION TRIGGER: If human scores 5
+       
         if (score >= 5) {
             verifyHuman();
         }
